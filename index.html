@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-debug.js"></script>
+		<script src="script.js"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Page Header -->
+		<div id="header" class="container-fluid">
+			<div class="float-left">
+				<h2>UFB Notes</h2>
+			</div>
+			<div class="float-right">
+				<div class="colors float-left" data-bind="foreach: colors">
+					<div class="color" data-bind="style:{ 'background-color': $data }, css: {selected: $data==$parent.selectedColor()}, click: $parent.selectColor"></div>
+				</div>
+				<button id="newNoteBtn" class="btn btn-primary float-right" data-bind="click: newNoteBtnClicked">New Note</button>
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div id="content" data-bind="foreach: notes">
+			<div class="note" data-bind="style:{ 'background-color': backgroundColor }, click: $parent.noteClicked, css: {selected: $parent.selectedNote()==$data}">
+				<div class="note-heading float-left container-fluid">
+					<div class="note-title float-left col-xs-10">
+						<input type="text" data-bind="value: title" />
+					</div>
+					<div class="note-close float-right col-xs-2">
+						<button class="btn close-btn" data-bind="click: $parent.removeNote">&#10006;</button>
+					</div>
+				</div>
+				<div class="note-content">
+					<textarea class="note-edit-area" data-bind="text: value"></textarea>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

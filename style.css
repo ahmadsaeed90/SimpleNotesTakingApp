@@ -1,0 +1,70 @@
+/* Add your css styles here */
+
+#header {
+    background: #eee;
+    padding: 10px;
+    position: fixed;
+}
+
+#content {
+    width: 100%;
+    float: left;
+    margin-top: 65px;
+}
+
+.note {
+    float: left;
+    border: 1px solid #ccc;
+    width: 200;
+    height: 250px;
+    margin: 10px;
+}
+
+div.note-heading {
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+}
+
+.note-heading input {
+    background: transparent;
+    border: none;
+    width: 158px;
+    font-weight: bold;
+}
+
+.note-edit-area {
+    width: 100%;
+    height: 87%;
+    border: 0;
+    resize: none;
+    background: transparent;
+}
+
+.colors {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-left: 5px;
+}
+
+.color:hover, .color.selected {
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.note.selected {
+    border: 1px solid #000;
+}
+
+.btn.close-btn {
+    padding: 2px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
