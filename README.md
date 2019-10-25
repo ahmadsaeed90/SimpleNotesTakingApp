@@ -1,3 +1,3 @@
 # SimpleNotesTakingApp
 
-Simple note taking app developed using knockout js
+Simple notes taking app developed using knockout js
